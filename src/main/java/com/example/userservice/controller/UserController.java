@@ -25,7 +25,7 @@ public class UserController {
     public ResponseEntity<UserDto> create(@Valid @RequestBody UserDto dto) {
         UserDto created = service.create(dto);
         log.info("log method create completed");
-        return ResponseEntity.created(URI.create("/api/users/" + created.getId())).body(created);
+        return ResponseEntity.created(URI.create("/users/" + created.getId())).body(created);
     }
 
     @GetMapping("/{id}")
